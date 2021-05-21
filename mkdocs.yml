@@ -1,0 +1,76 @@
+site_name: Tuya Android IoT SDK
+
+copyright: Copyright &copy; 2021 Tuya Inc. 
+
+nav:
+  - 概览: index.md
+  - 准备工作: prepare.md 
+  - 集成SDK: integration.md 
+  - IoT SDK:
+    - IoT 控制: iot.md 
+    - OTA 升级: upgrade.md
+  - 网关 SDK:
+    - 网关控制: gateway.md
+    - Zigbee网关:
+      - 模块产测: zigbee_test.md
+    - OTA 升级: upgrade.md
+  - 语音SDK:
+    - 语音控制: voice_sdk.md
+    - 语音助手: voice_assistant.md
+  - 日志系统: logutils.md
+  - 常见问题: FAQ.md
+  - 更新日志: changelog.md
+
+theme:
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.ico
+
+markdown_extensions:
+  - markdown.extensions.toc:
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      permalink: ""
+  - markdown.extensions.admonition:
+  - markdown.extensions.smarty:
+      smart_quotes: false
+  - pymdownx.betterem:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.def_list:
+  - markdown.extensions.tables:
+  - markdown.extensions.abbr:
+  - markdown.extensions.footnotes:
+  - markdown.extensions.md_in_html:
+  - pymdownx.superfences:
+      preserve_tabs: true
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite:
+  - pymdownx.tilde:
+  - pymdownx.caret:
+  - pymdownx.smartsymbols:
+  - pymdownx.escapeall:
+      hardbreak: True
+      nbsp: True
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.progressbar:
+  - pymdownx.arithmatex:
+  - pymdownx.mark:
+  - pymdownx.striphtml:
+  - pymdownx.keys:
+      separator: "\uff0b"
+  - pymdownx.details:
+  - pymdownx.tabbed:
+  - pymdownx.saneheaders:
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - javascripts/config.js
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
+
+extra:
+  version:
+    default: stable
+    provider: mike
+
