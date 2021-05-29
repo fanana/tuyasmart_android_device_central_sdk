@@ -1,0 +1,1696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>IoT 控制 - Tuya Android IoT SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iot-控制" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tuya Android IoT SDK" class="md-header__button md-logo" aria-label="Tuya Android IoT SDK" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tuya Android IoT SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IoT 控制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tuya Android IoT SDK" class="md-nav__button md-logo" aria-label="Tuya Android IoT SDK" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Tuya Android IoT SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        概览
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        准备工作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        集成SDK
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        IoT SDK
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="IoT SDK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          IoT SDK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          IoT 控制
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        IoT 控制
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iot-启动" class="md-nav__link">
+    IoT 启动
+  </a>
+  
+    <nav class="md-nav" aria-label="IoT 启动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#获取iot-sdk-实例" class="md-nav__link">
+    获取IoT SDK 实例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#注册回调函数" class="md-nav__link">
+    注册回调函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#启动iot" class="md-nav__link">
+    启动IoT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iot-设备激活" class="md-nav__link">
+    IoT 设备激活
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dp-点上报" class="md-nav__link">
+    DP 点上报
+  </a>
+  
+    <nav class="md-nav" aria-label="DP 点上报">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#异步上报" class="md-nav__link">
+    异步上报
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#同步上报" class="md-nav__link">
+    同步上报
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atop透传接口" class="md-nav__link">
+    ATOP透传接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#获取虚拟-id" class="md-nav__link">
+    获取虚拟 ID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#获取-sdk-版本信息" class="md-nav__link">
+    获取 SDK 版本信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iot-设备重置" class="md-nav__link">
+    IoT 设备重置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#销毁iot--sdk-实例" class="md-nav__link">
+    销毁IoT  SDK 实例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#回调函数" class="md-nav__link">
+    回调函数
+  </a>
+  
+    <nav class="md-nav" aria-label="回调函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iot-状态回调" class="md-nav__link">
+    IoT 状态回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-重置回调" class="md-nav__link">
+    IoT 重置回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#重启请求回调" class="md-nav__link">
+    重启请求回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-设备网络状态回调" class="md-nav__link">
+    IoT 设备网络状态回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-dp-点下发回调" class="md-nav__link">
+    IoT DP 点下发回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-dp-点透传数据下发回调" class="md-nav__link">
+    IoT DP 点透传数据下发回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-dp-点数据查询回调" class="md-nav__link">
+    IoT DP 点数据查询回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取-ip-回调" class="md-nav__link">
+    获取 IP 回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取-mac-地址回调" class="md-nav__link">
+    获取 MAC 地址回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#启动结果回调" class="md-nav__link">
+    启动结果回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取日志文件回调" class="md-nav__link">
+    获取日志文件回调
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade/" class="md-nav__link">
+        OTA 升级
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        网关 SDK
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网关 SDK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          网关 SDK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gateway/" class="md-nav__link">
+        网关控制
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Zigbee网关
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Zigbee网关" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Zigbee网关
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zigbee_test/" class="md-nav__link">
+        模块产测
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade/" class="md-nav__link">
+        OTA 升级
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        语音 SDK
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="语音 SDK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          语音 SDK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice_sdk/" class="md-nav__link">
+        语音控制
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice_assistant/" class="md-nav__link">
+        语音助手
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logutils/" class="md-nav__link">
+        日志系统
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        名词解释
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        更新日志
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iot-启动" class="md-nav__link">
+    IoT 启动
+  </a>
+  
+    <nav class="md-nav" aria-label="IoT 启动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#获取iot-sdk-实例" class="md-nav__link">
+    获取IoT SDK 实例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#注册回调函数" class="md-nav__link">
+    注册回调函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#启动iot" class="md-nav__link">
+    启动IoT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iot-设备激活" class="md-nav__link">
+    IoT 设备激活
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dp-点上报" class="md-nav__link">
+    DP 点上报
+  </a>
+  
+    <nav class="md-nav" aria-label="DP 点上报">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#异步上报" class="md-nav__link">
+    异步上报
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#同步上报" class="md-nav__link">
+    同步上报
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atop透传接口" class="md-nav__link">
+    ATOP透传接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#获取虚拟-id" class="md-nav__link">
+    获取虚拟 ID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#获取-sdk-版本信息" class="md-nav__link">
+    获取 SDK 版本信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iot-设备重置" class="md-nav__link">
+    IoT 设备重置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#销毁iot--sdk-实例" class="md-nav__link">
+    销毁IoT  SDK 实例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#回调函数" class="md-nav__link">
+    回调函数
+  </a>
+  
+    <nav class="md-nav" aria-label="回调函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iot-状态回调" class="md-nav__link">
+    IoT 状态回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-重置回调" class="md-nav__link">
+    IoT 重置回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#重启请求回调" class="md-nav__link">
+    重启请求回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-设备网络状态回调" class="md-nav__link">
+    IoT 设备网络状态回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-dp-点下发回调" class="md-nav__link">
+    IoT DP 点下发回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-dp-点透传数据下发回调" class="md-nav__link">
+    IoT DP 点透传数据下发回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iot-dp-点数据查询回调" class="md-nav__link">
+    IoT DP 点数据查询回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取-ip-回调" class="md-nav__link">
+    获取 IP 回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取-mac-地址回调" class="md-nav__link">
+    获取 MAC 地址回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#启动结果回调" class="md-nav__link">
+    启动结果回调
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取日志文件回调" class="md-nav__link">
+    获取日志文件回调
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="iot-控制">IoT 控制<a class="headerlink" href="#iot-控制" title="Permanent link"></a></h1>
+<p>IoT 控制实现了设备的启动、入网。</p>
+<h2 id="iot-启动">IoT 启动<a class="headerlink" href="#iot-启动" title="Permanent link"></a></h2>
+<h3 id="获取iot-sdk-实例">获取IoT SDK 实例<a class="headerlink" href="#获取iot-sdk-实例" title="Permanent link"></a></h3>
+<details class="example" open="open"><summary>示例代码</summary><div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="n">TuyaIotSdk</span> <span class="n">mIot</span> <span class="o">=</span> <span class="n">TuyaIotSdk</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Kotlin</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">mIot</span> <span class="o">=</span> <span class="n">TuyaIotSdk</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h3 id="注册回调函数">注册回调函数<a class="headerlink" href="#注册回调函数" title="Permanent link"></a></h3>
+<p>创建 <code>IotCallbacks</code> 对象， 调用 <code>TuyaIotSdk</code> 的 <code>setIotCallbacks</code> 函数注册。回调函数的实现参考 <a href="#回调函数">回调函数</a> 中说明。</p>
+<details class="example"><summary>示例代码</summary><div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">mIot</span><span class="p">.</span><span class="na">setIotCallbacks</span><span class="p">(</span><span class="k">new</span> <span class="n">IotCallbacks</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">onGetIP</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">onGetMacAddress</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStatusChanged</span><span class="p">(</span><span class="kt">int</span> <span class="n">status</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReset</span><span class="p">(</span><span class="kt">int</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReboot</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDataPointCommand</span><span class="p">(</span><span class="kt">int</span> <span class="n">type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dttType</span><span class="p">,</span> <span class="n">String</span> <span class="n">cid</span><span class="p">,</span> <span class="n">String</span> <span class="n">groupid</span><span class="p">,</span> <span class="n">DataPoint</span><span class="o">[]</span> <span class="n">dataPoint</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRawDataPointCommand</span><span class="p">(</span><span class="kt">int</span> <span class="n">type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dttType</span><span class="p">,</span> <span class="n">String</span> <span class="n">cid</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dpid</span><span class="p">,</span> <span class="n">String</span> <span class="n">groupid</span><span class="p">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDataPointQuery</span><span class="p">(</span><span class="n">String</span> <span class="n">cid</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">dpArray</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNetworkStatus</span><span class="p">(</span><span class="kt">int</span> <span class="n">status</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStartSuccess</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStartFailure</span><span class="p">(</span><span class="kt">int</span> <span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">onGetLogFile</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Kotlin</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">mIot</span><span class="p">.</span><span class="na">setIotCallbacks</span><span class="p">(</span><span class="k">object</span> <span class="p">:</span> <span class="nc">IotCallbacks</span> <span class="p">{</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onStatusChanged</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onReset</span><span class="p">(</span><span class="n">type</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onReboot</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onDataPointCommand</span><span class="p">(</span><span class="n">type</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">dttType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">cid</span><span class="p">:</span> <span class="kt">String?</span><span class="p">,</span> <span class="n">groupid</span><span class="p">:</span> <span class="kt">String?</span><span class="p">,</span> <span class="n">dataPoint</span><span class="p">:</span> <span class="n">Array</span><span class="o">&lt;</span><span class="k">out</span> <span class="n">DataPoint</span><span class="o">&gt;?</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onRawDataPointCommand</span><span class="p">(</span><span class="n">type</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">dttType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">cid</span><span class="p">:</span> <span class="kt">String?</span><span class="p">,</span> <span class="n">dpid</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">groupid</span><span class="p">:</span> <span class="kt">String?</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">ByteArray?)</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onDataPointQuery</span><span class="p">(</span><span class="n">cid</span><span class="p">:</span> <span class="kt">String?</span><span class="p">,</span> <span class="n">dpArray</span><span class="p">:</span> <span class="n">IntArray?)</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onNetworkStatus</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onStartSuccess</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onStartFailure</span><span class="p">(</span><span class="n">err</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onGetLogFile</span><span class="p">():</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onGetIP</span><span class="p">():</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onGetMacAddress</span><span class="p">():</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Not yet implemented&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h3 id="启动iot">启动IoT<a class="headerlink" href="#启动iot" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">tuyaIotStart</span><span class="p">(</span><span class="n">Context</span> <span class="n">context</span><span class="p">,</span> <span class="n">IotConfig</span> <span class="n">config</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Context</td>
+<td>上下文</td>
+</tr>
+<tr>
+<td>IotConfig</td>
+<td>IoT 配置</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IotConfig</strong></p>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mPath</td>
+<td>存储路径（要求可读写分区），该目录要在app中创建</td>
+</tr>
+<tr>
+<td>mFirmwareKey</td>
+<td>固件key或者pid，向涂鸦申请，产品唯一。<br/>和mIsOEM配合使用:<br/>mIsOEM为true时，mFirmwareKey为固件key<br/>mIsOEM为false时，mFirmwareKey为pid</td>
+</tr>
+<tr>
+<td>mUUID</td>
+<td>涂鸦IOT平台获取到的UUID（授权信息），和mAuthKey成对使用</td>
+</tr>
+<tr>
+<td>mAuthKey</td>
+<td>涂鸦IOT平台获取到的Authkey（授权信息），和mUUID成对使用</td>
+</tr>
+<tr>
+<td>mIsOEM</td>
+<td>是否是oem产品，和mFirmwareKey配合使用。</td>
+</tr>
+<tr>
+<td>mPackageName</td>
+<td>App的包名，用于App/固件的OTA升级。</td>
+</tr>
+<tr>
+<td>mVersion</td>
+<td>App/设备固件的版本号，由用户设置，格式为 “xx.xx.xx”。<br/> 用于固件升级，设备激活后，版本号会在手机APP上设备详情中进行展示。</td>
+</tr>
+<tr>
+<td>mNetworkInterface</td>
+<td>设备的网卡名称，比如: wlan0, eth0。为null时SDK会使用系统默认的网卡。</td>
+</tr>
+<tr>
+<td>mLogLevel</td>
+<td>SDK输出log信息的级别</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回值说明</strong></p>
+<p>tuyaIotStart 是异步调用，其结果通过回调函数返回，启动成功回调函数 onStartSuccess，失败调用回调函数onStartFailure，参考 <a href="#启动结果回调">启动结果回调</a> 中的说明。</p>
+<details class="example"><summary>示例代码</summary><div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">File</span> <span class="n">filedirs</span> <span class="o">=</span> <span class="n">getFilesDir</span><span class="p">();</span>
+<span class="n">String</span> <span class="n">storageDir</span> <span class="o">=</span> <span class="n">filedirs</span> <span class="o">+</span> <span class="n">File</span><span class="p">.</span><span class="na">separator</span> <span class="o">+</span> <span class="s">&quot;storage&quot;</span> <span class="o">+</span> <span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="p">;</span>
+<span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="n">storageDir</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">file</span><span class="p">.</span><span class="na">mkdir</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">IotConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IotConfig</span><span class="p">();</span>
+<span class="n">config</span><span class="p">.</span><span class="na">mFirmwareKey</span> <span class="o">=</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="na">mUUID</span> <span class="o">=</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="na">mAuthKey</span> <span class="o">=</span> <span class="s">&quot;xxxxxxxxxxxxxxx&quot;</span><span class="p">;</span>
+
+<span class="n">config</span><span class="p">.</span><span class="na">mIsOEM</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="na">mVersion</span> <span class="o">=</span> <span class="s">&quot;1.0.0&quot;</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="na">mPackageName</span> <span class="o">=</span> <span class="n">getPackageName</span><span class="p">();</span>
+<span class="n">config</span><span class="p">.</span><span class="na">mPath</span> <span class="o">=</span> <span class="n">storageDir</span><span class="p">;</span>
+<span class="n">config</span><span class="p">.</span><span class="na">mLogLevel</span> <span class="o">=</span> <span class="n">TY_LOG_LEVEL_DEBUG</span><span class="p">;</span>
+
+<span class="n">mIot</span><span class="p">.</span><span class="na">tuyaIotStart</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">config</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Kotlin</label><div class="tabbed-content">
+<p>```kotlin
+val filedirs: File = getFilesDir()
+val storageDir = filedirs.toString() + File.separator + "storage" + File.separator
+val file = File(storageDir)
+if (!file.exists()) {
+    file.mkdir()
+}</p>
+<p>val config = IotConfig()
+config.mFirmwareKey = "xxxxxxxxxx"
+config.mUUID = "xxxxxxxxxx"
+config.mAuthKey = "xxxxxxxxxxxxxxx"</p>
+<p>config.mIsOEM = true
+config.mVersion = "1.0.0"
+config.mPackageName = getPackageName()
+config.mPath = storageDir
+config.mLogLevel = LogLevel.TY_LOG_LEVEL_DEBUG</p>
+<p>mIot.tuyaIotStart(context, config)
+```                                     |</p>
+</div>
+</div>
+</details>
+<h2 id="iot-设备激活">IoT 设备激活<a class="headerlink" href="#iot-设备激活" title="Permanent link"></a></h2>
+<p>启动设备成功之后，才可以入网。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">tuyaIotBindToken</span><span class="p">(</span><span class="n">String</span> <span class="n">token</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>入网 token ，<br>需要登录涂鸦账号之后调用 Tuya Smart Android Home SDK 中的接口获取。<br>详情请参考 Tuya Smart Android Home SDK - 设备配网 - <strong>获取配网 token</strong> 的接口说明。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回值说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>调用成功，请注意，调用成功不代表已经入网成功，入网结果通过 onNetworkStatus 通知。</td>
+</tr>
+<tr>
+<td>非 0 值</td>
+<td>调用失败，没有入网。</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>示例代码</summary><div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">TuyaHomeSdk</span><span class="p">.</span><span class="na">getActivatorInstance</span><span class="p">().</span><span class="na">getActivatorToken</span><span class="p">(</span><span class="n">homeId</span><span class="p">,</span> <span class="k">new</span> <span class="n">ITuyaActivatorGetToken</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">token</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">threadPoolExecutor</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+                <span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;get token suc , iot bind token&quot;</span><span class="p">);</span>
+                <span class="n">TuyaIotSdk</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">tuyaIotBindToken</span><span class="p">(</span><span class="n">token</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailure</span><span class="p">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="p">,</span> <span class="n">String</span> <span class="n">errorMsg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;get token failed &quot;</span> <span class="o">+</span> <span class="n">errorCode</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">errorMsg</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h2 id="dp-点上报">DP 点上报<a class="headerlink" href="#dp-点上报" title="Permanent link"></a></h2>
+<h3 id="异步上报">异步上报<a class="headerlink" href="#异步上报" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>同步上传透传型 DP 点数据。</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">tuyaIotReportDataPointJsonAsync</span><span class="p">(</span><span class="n">String</span> <span class="n">devId</span><span class="p">,</span> <span class="n">DataPoint</span><span class="o">[]</span> <span class="n">dataPoint</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>devId</td>
+<td>如果是主设备，devId 是自设备 id；如果是IoT  /soc/mcu，则 devId 为 null</td>
+</tr>
+<tr>
+<td>dataPoint</td>
+<td>dp 点信息，参考 TuyaIotSdk.DataPoint</td>
+</tr>
+</tbody>
+</table>
+<p>TuyaIotSdk.DataPoint</p>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mId</td>
+<td>在涂鸦 IoT 平台上定义的功能点编号</td>
+</tr>
+<tr>
+<td>mType</td>
+<td>功能点的数据类型，支持的数据类型请参见涂鸦文档中心的功能点定义，参考<a href="https://docs.tuya.com/zh/iot/configure-in-platform/function-definition/custom-functions?id=K937y38137c64">自定义功能</a>:<br>TYPE_BOOL：布尔型<br>TYPE_VALUE：数值型<br>TYPE_STRING：字符串型<br>TYPE_ENUM：枚举型<br>TYPE_BITMAP：故障型<br></td>
+</tr>
+<tr>
+<td>mData</td>
+<td>功能点的值，数据类型由 mType 指定。</td>
+</tr>
+<tr>
+<td>mTimeStamp</td>
+<td>时间戳，值为 0 时采用当前的时间。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="同步上报">同步上报<a class="headerlink" href="#同步上报" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">tuyaIotReportDataPointRawSync</span><span class="p">(</span><span class="n">String</span> <span class="n">devId</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dataPointId</span><span class="p">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="p">,</span> <span class="kt">int</span> <span class="n">timeout</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>devId</td>
+<td>如果是主设备，devId 是自设备 id；如果是IoT  /soc/mcu，则 devId 为 null</td>
+</tr>
+<tr>
+<td>dataPointId</td>
+<td>在涂鸦 IoT 平台上定义的功能点编号</td>
+</tr>
+<tr>
+<td>data</td>
+<td>透传型 dp 点数据</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>函数阻塞超时时间，以秒为单位</td>
+</tr>
+</tbody>
+</table>
+<h2 id="atop透传接口">ATOP透传接口<a class="headerlink" href="#atop透传接口" title="Permanent link"></a></h2>
+<p><strong>接口说明</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="n">ATopResponse</span> <span class="nf">tuyaIotAtopPost</span><span class="p">(</span><span class="n">String</span> <span class="n">api</span><span class="p">,</span> <span class="n">String</span> <span class="n">version</span><span class="p">,</span> <span class="n">String</span> <span class="n">postData</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api</td>
+<td>接口名</td>
+</tr>
+<tr>
+<td>version</td>
+<td>接口版本</td>
+</tr>
+<tr>
+<td>postData</td>
+<td>上报云端的数据json字符串</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATopResponse</td>
+<td>包含errCode（错误码）和result（请求结果）两个字段。请求正常返回时errCode为0</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>示例代码</summary><div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">ATopResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">mIot</span><span class="p">.</span><span class="na">tuyaIotAtopPost</span><span class="p">(</span><span class="s">&quot;tuya.xx.xx&quot;</span><span class="p">,</span> <span class="s">&quot;1.0&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">errCode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;result: &quot;</span> <span class="o">+</span> <span class="n">response</span><span class="p">.</span><span class="na">result</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h2 id="获取虚拟-id">获取虚拟 ID<a class="headerlink" href="#获取虚拟-id" title="Permanent link"></a></h2>
+<p>IoT 设备激活后，可以通过该方法获取设备的虚拟 ID 。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span> <span class="nf">getId</span><span class="p">()</span><span class="err">；</span>
+</code></pre></div>
+<h2 id="获取-sdk-版本信息">获取 SDK 版本信息<a class="headerlink" href="#获取-sdk-版本信息" title="Permanent link"></a></h2>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span> <span class="nf">getVersion</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="iot-设备重置">IoT 设备重置<a class="headerlink" href="#iot-设备重置" title="Permanent link"></a></h2>
+<p>IoT 设备本地恢复出厂设置，IoT 设备会从云端解绑，并将子设备等数据信息全部删除。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">tuyaIotReset</span><span class="p">();</span>
+</code></pre></div>
+<p>IoT 重置后会触发<a href="#IoT 重置回调">IoT 重置回调</a></p>
+<h2 id="销毁iot--sdk-实例">销毁IoT  SDK 实例<a class="headerlink" href="#销毁iot--sdk-实例" title="Permanent link"></a></h2>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">tuyaIotRelease</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="回调函数">回调函数<a class="headerlink" href="#回调函数" title="Permanent link"></a></h2>
+<p>在调用 IotStart 之前应该注册 IotCallbacks 回调函数，以接收处理结果。</p>
+<h3 id="iot-状态回调">IoT 状态回调<a class="headerlink" href="#iot-状态回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>IoT 状态更新时回调。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onStatusChanged</span><span class="p">(</span><span class="kt">int</span> <span class="n">status</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>状态更改通知回调函数：<br>STATUS_RESET：IoT 被重置<br>STATUS_ACTIVATED：IoT 被激活<br>STATUS_FIRST_START：IoT 第一次启动<br>STATUS_NORMAL：IoT 激活而且已经启动</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iot-重置回调">IoT 重置回调<a class="headerlink" href="#iot-重置回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>IoT 被重置后回调，app 需要根据 type 的值做相应的操作。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onReset</span><span class="p">(</span><span class="kt">int</span> <span class="n">type</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>重置类型：<br>RESET_TYPE_LOCAL_RESET_FACTORY：本地恢复工厂设置<br>RESET_TYPE_REMOTE_UNACTIVE：远端IoT 重置，即为通过 APP 取消与账号绑定<br>RESET_TYPE_LOCAL_UNACTIVE：本地IoT 重置，取消与账号绑定<br>RESET_TYPE_REMOTE_RESET_FACTORY：远端恢复工厂设置<br/>RESET_TYPE_RESET_DATA_FACTORY：恢复数据工厂设置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="重启请求回调">重启请求回调<a class="headerlink" href="#重启请求回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>IoT 请求重启设备。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onReboot</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="iot-设备网络状态回调">IoT 设备网络状态回调<a class="headerlink" href="#iot-设备网络状态回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>IoT 已经被重置，app 需要根据 type 的值做相应的操作。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onNetworkStatus</span><span class="p">(</span><span class="kt">int</span> <span class="n">status</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>网络状态：<br>CLOUD_UNCONNECTED：联网失败<br>CLOUD_CONNECTED：云端连接成功，设备已经激活</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iot-dp-点下发回调">IoT DP 点下发回调<a class="headerlink" href="#iot-dp-点下发回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>DP 点下发。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onDataPointCommand</span><span class="p">(</span><span class="nd">@DataPointCommandType</span> <span class="kt">int</span> <span class="n">type</span><span class="p">,</span> <span class="nd">@DataPointTransportType</span> <span class="kt">int</span> <span class="n">dttType</span><span class="p">,</span> <span class="n">String</span> <span class="n">cid</span><span class="p">,</span> <span class="n">String</span> <span class="n">groupid</span><span class="p">,</span> <span class="n">DataPoint</span><span class="o">[]</span> <span class="n">dataPoint</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>指令类型：<br>DATAPOINT_CMD_LAN：LAN 触发<br>DATAPOINT_CMD_MQ：MQTT 触发<br>DATAPOINT_CMD_TIMER：本地定时触发<br>DATAPOINT_CMD_SCENE_LINKAGE：场景联动触发<br/>DATAPOINT_CMD_RELIABLE_TRANSFER：重发</td>
+</tr>
+<tr>
+<td>dttType</td>
+<td>传输方式：<br/>DATAPOINT_DTT_SCT_UNC：LAN 触发<br/>DATAPOINT_DTT_SCT_BNC：MQTT 触发<br/>DATAPOINT_DTT_SCT_MNC：本地定时触发<br/>DATAPOINT_DTT_SCT_SCENE：场景联动触发</td>
+</tr>
+<tr>
+<td>cid</td>
+<td>cid == NULL 表示控制的IoT 的功能点；cid != NULL 表示控制的IoT 子设备的功能点，其中 cid 是子设备的唯一 ID</td>
+</tr>
+<tr>
+<td>groupid</td>
+<td>群组 ID，只有当 dtt_tp = 2 时，该字段才有效。</td>
+</tr>
+<tr>
+<td>dataPoint</td>
+<td>dp点数据，DataPoint类型参考<a href="#DP点异步上报">DP点异步上报</a>中的说明。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iot-dp-点透传数据下发回调">IoT DP 点透传数据下发回调<a class="headerlink" href="#iot-dp-点透传数据下发回调" title="Permanent link"></a></h3>
+<p>用于透传用户自定义的 DP 点数据</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onRawDataPointCommand</span><span class="p">(</span><span class="nd">@DataPointCommandType</span> <span class="kt">int</span> <span class="n">type</span><span class="p">,</span> <span class="nd">@DataPointTransportType</span> <span class="kt">int</span> <span class="n">dttType</span><span class="p">,</span> <span class="n">String</span> <span class="n">cid</span><span class="p">,</span>
+                               <span class="kt">int</span> <span class="n">dpid</span><span class="p">,</span> <span class="n">String</span> <span class="n">groupid</span><span class="p">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>指令类型：<br>DATAPOINT_CMD_LAN：LAN 触发<br>DATAPOINT_CMD_MQ：MQTT 触发<br>DATAPOINT_CMD_TIMER：本地定时触发<br>DATAPOINT_CMD_SCENE_LINKAGE：场景联动触发<br/>DATAPOINT_CMD_RELIABLE_TRANSFER：重发</td>
+</tr>
+<tr>
+<td>dttType</td>
+<td>传输方式：<br/>DATAPOINT_DTT_SCT_UNC：LAN 触发<br/>DATAPOINT_DTT_SCT_BNC：MQTT 触发<br/>DATAPOINT_DTT_SCT_MNC：本地定时触发<br/>DATAPOINT_DTT_SCT_SCENE：场景联动触发</td>
+</tr>
+<tr>
+<td>cid</td>
+<td>cid == NULL 表示控制的IoT 的功能点；cid != NULL 表示控制的IoT 子设备的功能点，其中 cid 是子设备的唯一 ID</td>
+</tr>
+<tr>
+<td>dpid</td>
+<td>DP 点的 ID</td>
+</tr>
+<tr>
+<td>groupid</td>
+<td>群组 ID，只有当 dtt_tp = 2 时，该字段才有效。</td>
+</tr>
+<tr>
+<td>data</td>
+<td>DP 点数据</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iot-dp-点数据查询回调">IoT DP 点数据查询回调<a class="headerlink" href="#iot-dp-点数据查询回调" title="Permanent link"></a></h3>
+<p>用于设备特定数据查询</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onDataPointQuery</span><span class="p">(</span><span class="n">String</span> <span class="n">cid</span><span class="p">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">dpArray</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cid</td>
+<td>cid == NULL 表示控制的IoT 的功能点；cid != NULL 表示控制的IoT 子设备的功能点，其中 cid 是子设备的唯一 ID</td>
+</tr>
+<tr>
+<td>dpArray</td>
+<td>用户定义功能点序号集</td>
+</tr>
+</tbody>
+</table>
+<h3 id="获取-ip-回调"><del>获取 IP 回调</del><a class="headerlink" href="#获取-ip-回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>获取设备IP，已废弃。</p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span> <span class="nf">onGetIP</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="获取-mac-地址回调"><del>获取 MAC 地址回调</del><a class="headerlink" href="#获取-mac-地址回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>获取设备 MAC 地址，已废弃。</p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span> <span class="nf">onGetMacAddress</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="启动结果回调">启动结果回调<a class="headerlink" href="#启动结果回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<p>tuyaIotStart 成功时调用 onStartSuccess 回调。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onStartSuccess</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>接口说明</strong></p>
+<p>tuyaIotStart 失败时调用 onStartFailure 回调。</p>
+<p><code>java
+void onStartFailure(int err);</code></p>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>错误码，为 IotError 中定义的值之一，常见错误：<br>ERROR_COM_ERROR：网络连接错误<br>ERROR_INVALID_PARM：参数错误<br>ERROR_INVALID_STATUS：状态错误</td>
+</tr>
+</tbody>
+</table>
+<h3 id="获取日志文件回调">获取日志文件回调<a class="headerlink" href="#获取日志文件回调" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span> <span class="nf">onGetLogFile</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>返回值说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td>需要保存的日志文件路径</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../integration/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              集成SDK
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../upgrade/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              OTA 升级
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Tuya Inc.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": {"default": "stable", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>

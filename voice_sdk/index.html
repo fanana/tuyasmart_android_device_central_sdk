@@ -1,0 +1,1825 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>语音控制 - Tuya Android IoT SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#语音控制" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tuya Android IoT SDK" class="md-header__button md-logo" aria-label="Tuya Android IoT SDK" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tuya Android IoT SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              语音控制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tuya Android IoT SDK" class="md-nav__button md-logo" aria-label="Tuya Android IoT SDK" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Tuya Android IoT SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        概览
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        准备工作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        集成SDK
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        IoT SDK
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="IoT SDK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          IoT SDK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iot/" class="md-nav__link">
+        IoT 控制
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade/" class="md-nav__link">
+        OTA 升级
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        网关 SDK
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="网关 SDK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          网关 SDK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gateway/" class="md-nav__link">
+        网关控制
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Zigbee网关
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Zigbee网关" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Zigbee网关
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zigbee_test/" class="md-nav__link">
+        模块产测
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade/" class="md-nav__link">
+        OTA 升级
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        语音 SDK
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="语音 SDK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          语音 SDK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          语音控制
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        语音控制
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#获取语音-sdk-实例" class="md-nav__link">
+    获取语音 SDK 实例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#语音-sdk-初始化" class="md-nav__link">
+    语音 SDK 初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#语音数据上报" class="md-nav__link">
+    语音数据上报
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#语音数据处理协议" class="md-nav__link">
+    语音数据处理协议
+  </a>
+  
+    <nav class="md-nav" aria-label="语音数据处理协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#音量设置" class="md-nav__link">
+    音量设置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#媒体控制" class="md-nav__link">
+    媒体控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#音频播放进度同步" class="md-nav__link">
+    音频播放进度同步
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tts-文本同步" class="md-nav__link">
+    TTS 文本同步
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#本地闹钟" class="md-nav__link">
+    本地闹钟
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#任务提醒" class="md-nav__link">
+    任务提醒
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#昵称设置" class="md-nav__link">
+    昵称设置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#子设备语音配网" class="md-nav__link">
+    子设备语音配网
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#语音上传状态" class="md-nav__link">
+    语音上传状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#云端媒体数据下发" class="md-nav__link">
+    云端媒体数据下发
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oem-定制数据透传" class="md-nav__link">
+    OEM 定制数据透传
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#音乐音频控制" class="md-nav__link">
+    音乐/音频控制
+  </a>
+  
+    <nav class="md-nav" aria-label="音乐/音频控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#音频切换" class="md-nav__link">
+    音频切换
+  </a>
+  
+    <nav class="md-nav" aria-label="音频切换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#播放上一首" class="md-nav__link">
+    播放上一首
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#播放下一首" class="md-nav__link">
+    播放下一首
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取播放模式" class="md-nav__link">
+    获取播放模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#设置播放模式" class="md-nav__link">
+    设置播放模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取当前播放的歌曲信息" class="md-nav__link">
+    获取当前播放的歌曲信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取当前的播放列表" class="md-nav__link">
+    获取当前的播放列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audiobean" class="md-nav__link">
+    AudioBean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice_assistant/" class="md-nav__link">
+        语音助手
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logutils/" class="md-nav__link">
+        日志系统
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        名词解释
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        常见问题
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        更新日志
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#获取语音-sdk-实例" class="md-nav__link">
+    获取语音 SDK 实例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#语音-sdk-初始化" class="md-nav__link">
+    语音 SDK 初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#语音数据上报" class="md-nav__link">
+    语音数据上报
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#语音数据处理协议" class="md-nav__link">
+    语音数据处理协议
+  </a>
+  
+    <nav class="md-nav" aria-label="语音数据处理协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#音量设置" class="md-nav__link">
+    音量设置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#媒体控制" class="md-nav__link">
+    媒体控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#音频播放进度同步" class="md-nav__link">
+    音频播放进度同步
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tts-文本同步" class="md-nav__link">
+    TTS 文本同步
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#本地闹钟" class="md-nav__link">
+    本地闹钟
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#任务提醒" class="md-nav__link">
+    任务提醒
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#昵称设置" class="md-nav__link">
+    昵称设置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#子设备语音配网" class="md-nav__link">
+    子设备语音配网
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#语音上传状态" class="md-nav__link">
+    语音上传状态
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#云端媒体数据下发" class="md-nav__link">
+    云端媒体数据下发
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oem-定制数据透传" class="md-nav__link">
+    OEM 定制数据透传
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#音乐音频控制" class="md-nav__link">
+    音乐/音频控制
+  </a>
+  
+    <nav class="md-nav" aria-label="音乐/音频控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#音频切换" class="md-nav__link">
+    音频切换
+  </a>
+  
+    <nav class="md-nav" aria-label="音频切换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#播放上一首" class="md-nav__link">
+    播放上一首
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#播放下一首" class="md-nav__link">
+    播放下一首
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取播放模式" class="md-nav__link">
+    获取播放模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#设置播放模式" class="md-nav__link">
+    设置播放模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取当前播放的歌曲信息" class="md-nav__link">
+    获取当前播放的歌曲信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#获取当前的播放列表" class="md-nav__link">
+    获取当前的播放列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audiobean" class="md-nav__link">
+    AudioBean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="语音控制">语音控制<a class="headerlink" href="#语音控制" title="Permanent link"></a></h1>
+<p>涂鸦语音 SDK 提供了 TTS 播报、ASR 文本、IOT 技能（设备控制、设备接入）、音乐（音乐、天气、相声、电台等）、提醒、语音媒体控制（麦克风开启/关闭、播放/暂停/上一首/下一首、蓝牙开启/关闭、闹钟、音量设置）、扩展 ATOP 接口（自定义云端交互业务）等能力。</p>
+<p>该 SDK 适合已经具备语音前端处理能力的使用者。</p>
+<h2 id="获取语音-sdk-实例">获取语音 SDK 实例<a class="headerlink" href="#获取语音-sdk-实例" title="Permanent link"></a></h2>
+<details class="example" open="open"><summary>示例代码</summary><div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">TuyaVoiceSdk</span> <span class="n">mVoice</span> <span class="o">=</span> <span class="n">TuyaVoiceSdk</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Kotlin</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">mVoice</span> <span class="o">=</span> <span class="n">TuyaVoiceSdk</span><span class="p">.</span><span class="na">getInstance</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h2 id="语音-sdk-初始化">语音 SDK 初始化<a class="headerlink" href="#语音-sdk-初始化" title="Permanent link"></a></h2>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">init</span><span class="p">(</span><span class="n">ISpeechHelper</span> <span class="n">callback</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISpeechHelper</td>
+<td><a href="#语音数据处理协议">语音数据处理协议</a></td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>示例代码</summary><div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">mVoice</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="k">new</span> <span class="n">ISpeechHelper</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSetVolume</span><span class="p">(</span><span class="kt">int</span> <span class="n">vol</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onControlCommand</span><span class="p">(</span><span class="kt">int</span> <span class="n">ctl</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSyncAudio</span><span class="p">()</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSyncDialogText</span><span class="p">(</span><span class="n">String</span> <span class="n">speaker</span><span class="p">,</span> <span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAlarmClock</span><span class="p">(</span><span class="n">String</span> <span class="n">alarm</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTaskAlert</span><span class="p">(</span><span class="kt">int</span> <span class="n">type</span><span class="p">,</span> <span class="n">String</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSetNickName</span><span class="p">(</span><span class="kt">int</span> <span class="n">mode</span><span class="p">,</span> <span class="n">String</span> <span class="n">nickname</span><span class="p">,</span> <span class="n">String</span> <span class="n">pinyin</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onThingConfig</span><span class="p">(</span><span class="kt">int</span> <span class="n">mode</span><span class="p">,</span> <span class="n">String</span> <span class="n">token</span><span class="p">,</span> <span class="kt">int</span> <span class="n">timeout</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUploadMediaStatus</span><span class="p">(</span><span class="kt">int</span> <span class="n">status</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCloudMedia</span><span class="p">(</span><span class="n">MediaAttribute</span><span class="o">[]</span> <span class="n">mediaAttributes</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCloudCustom</span><span class="p">(</span><span class="n">String</span> <span class="n">type</span><span class="p">,</span> <span class="n">String</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+        <span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Kotlin</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">mVoice</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="k">object</span> <span class="p">:</span> <span class="nc">ISpeechHelper</span> <span class="p">{</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onSetVolume</span><span class="p">(</span><span class="n">vol</span><span class="p">:</span> <span class="kt">Int</span><span class="p">):</span> <span class="kt">Boolean</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onControlCommand</span><span class="p">(</span><span class="n">ctl</span><span class="p">:</span> <span class="kt">Int</span><span class="p">):</span> <span class="kt">Boolean</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onSyncAudio</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onSyncDialogText</span><span class="p">(</span><span class="n">speaker</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onAlarmClock</span><span class="p">(</span><span class="n">alarm</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onTaskAlert</span><span class="p">(</span><span class="n">type</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onSetNickName</span><span class="p">(</span><span class="n">mode</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">nickname</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">pinyin</span><span class="p">:</span> <span class="kt">String</span><span class="p">):</span> <span class="kt">Boolean</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onThingConfig</span><span class="p">(</span><span class="n">mode</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onUploadMediaStatus</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onCloudMedia</span><span class="p">(</span><span class="n">mediaAttributes</span><span class="p">:</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">MediaAttribute</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onCloudCustom</span><span class="p">(</span><span class="n">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">})</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h2 id="语音数据上报">语音数据上报<a class="headerlink" href="#语音数据上报" title="Permanent link"></a></h2>
+<p><strong>接口说明</strong> </p>
+<p>设备端上报采集到的语音数据，依次调用开启、上传、结束接口。
+云端在识别到意图后，会触发 <a href="#语音数据处理协议">语音数据处理协议</a> 回调执行对应的动作。</p>
+<p>支持的语音 PCM 数据格式：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通道数</td>
+<td>单通道</td>
+</tr>
+<tr>
+<td>采样率</td>
+<td>16000</td>
+</tr>
+<tr>
+<td>采样精度</td>
+<td>16bit</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>示例代码</summary><div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">SAMPLING_RATE_IN_HZ</span> <span class="o">=</span> <span class="mi">16000</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">CHANNEL_CONFIG</span> <span class="o">=</span> <span class="n">AudioFormat</span><span class="p">.</span><span class="na">CHANNEL_IN_MONO</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">AUDIO_FORMAT</span> <span class="o">=</span> <span class="n">AudioFormat</span><span class="p">.</span><span class="na">ENCODING_PCM_16BIT</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">BUFFER_SIZE_FACTOR</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">BUFFER_SIZE</span> <span class="o">=</span> <span class="n">AudioRecord</span><span class="p">.</span><span class="na">getMinBufferSize</span><span class="p">(</span><span class="n">SAMPLING_RATE_IN_HZ</span><span class="p">,</span>
+        <span class="n">CHANNEL_CONFIG</span><span class="p">,</span> <span class="n">AUDIO_FORMAT</span><span class="p">)</span> <span class="o">*</span> <span class="n">BUFFER_SIZE_FACTOR</span><span class="p">;</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="n">AtomicBoolean</span> <span class="n">recordingInProgress</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicBoolean</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="kd">private</span> <span class="n">AudioRecord</span> <span class="n">recorder</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">private</span> <span class="n">Thread</span> <span class="n">recordingThread</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">private</span> <span class="kd">class</span> <span class="nc">RecordingRunnable</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="p">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">BUFFER_SIZE</span><span class="o">]</span><span class="p">;</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">recordingInProgress</span><span class="p">.</span><span class="na">get</span><span class="p">())</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">recorder</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">BUFFER_SIZE</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;Reading of audio buffer failed: &quot;</span> <span class="o">+</span>
+                        <span class="n">getBufferReadFailureReason</span><span class="p">(</span><span class="n">result</span><span class="p">));</span>
+            <span class="p">}</span>
+            <span class="n">mVoice</span><span class="p">.</span><span class="na">voiceUploadMediaUpload</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">mVoice</span><span class="p">.</span><span class="na">voiceUploadMediaStop</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="nf">getBufferReadFailureReason</span><span class="p">(</span><span class="kt">int</span> <span class="n">errorCode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">errorCode</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="n">AudioRecord</span><span class="p">.</span><span class="na">ERROR_INVALID_OPERATION</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s">&quot;ERROR_INVALID_OPERATION&quot;</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">AudioRecord</span><span class="p">.</span><span class="na">ERROR_BAD_VALUE</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s">&quot;ERROR_BAD_VALUE&quot;</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">AudioRecord</span><span class="p">.</span><span class="na">ERROR_DEAD_OBJECT</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s">&quot;ERROR_DEAD_OBJECT&quot;</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">AudioRecord</span><span class="p">.</span><span class="na">ERROR</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s">&quot;ERROR&quot;</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s">&quot;Unknown (&quot;</span> <span class="o">+</span> <span class="n">errorCode</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">startRecording</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">recorder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AudioRecord</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">AudioSource</span><span class="p">.</span><span class="na">VOICE_RECOGNITION</span><span class="p">,</span> <span class="n">SAMPLING_RATE_IN_HZ</span><span class="p">,</span>
+            <span class="n">CHANNEL_CONFIG</span><span class="p">,</span> <span class="n">AUDIO_FORMAT</span><span class="p">,</span> <span class="n">BUFFER_SIZE</span><span class="p">);</span>
+
+    <span class="n">mVoice</span><span class="p">.</span><span class="na">voiceUploadMediaStart</span><span class="p">();</span>
+    <span class="n">recorder</span><span class="p">.</span><span class="na">startRecording</span><span class="p">();</span>
+
+    <span class="n">recordingInProgress</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+
+    <span class="n">recordingThread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="p">(</span><span class="k">new</span> <span class="n">RecordingRunnable</span><span class="p">(),</span> <span class="s">&quot;Recording Thread&quot;</span><span class="p">);</span>
+    <span class="n">recordingThread</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">stopRecording</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">recorder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">recordingInProgress</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+    <span class="n">recorder</span><span class="p">.</span><span class="na">stop</span><span class="p">();</span>
+
+    <span class="n">recorder</span><span class="p">.</span><span class="na">release</span><span class="p">();</span>
+
+    <span class="n">recorder</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="n">recordingThread</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Kotlin</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">val</span> <span class="nv">SAMPLING_RATE_IN_HZ</span> <span class="o">=</span> <span class="m">16000</span>
+<span class="kd">private</span> <span class="kd">val</span> <span class="nv">CHANNEL_CONFIG</span> <span class="o">=</span> <span class="n">AudioFormat</span><span class="p">.</span><span class="na">CHANNEL_IN_MONO</span>
+<span class="kd">private</span> <span class="kd">val</span> <span class="nv">AUDIO_FORMAT</span> <span class="o">=</span> <span class="n">AudioFormat</span><span class="p">.</span><span class="na">ENCODING_PCM_16BIT</span>
+<span class="kd">private</span> <span class="kd">val</span> <span class="nv">BUFFER_SIZE_FACTOR</span> <span class="o">=</span> <span class="m">4</span>
+<span class="kd">private</span> <span class="kd">val</span> <span class="nv">BUFFER_SIZE</span> <span class="o">=</span> <span class="n">AudioRecord</span><span class="p">.</span><span class="na">getMinBufferSize</span><span class="p">(</span><span class="n">SAMPLING_RATE_IN_HZ</span><span class="p">,</span>
+        <span class="n">CHANNEL_CONFIG</span><span class="p">,</span> <span class="n">AUDIO_FORMAT</span><span class="p">)</span> <span class="o">*</span> <span class="n">BUFFER_SIZE_FACTOR</span>
+<span class="kd">private</span> <span class="kd">val</span> <span class="nv">recordingInProgress</span> <span class="o">=</span> <span class="n">AtomicBoolean</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="kd">private</span> <span class="kd">var</span> <span class="nv">recorder</span><span class="p">:</span> <span class="n">AudioRecord? </span><span class="o">=</span> <span class="kc">null</span>
+<span class="kd">private</span> <span class="kd">var</span> <span class="nv">recordingThread</span><span class="p">:</span> <span class="n">Thread? </span><span class="o">=</span> <span class="kc">null</span>
+
+<span class="kd">private</span> <span class="kd">class</span> <span class="nc">RecordingRunnable</span> <span class="p">:</span> <span class="n">Runnable</span> <span class="p">{</span>
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="nv">buffer</span> <span class="o">=</span> <span class="n">ByteArray</span><span class="p">(</span><span class="n">BUFFER_SIZE</span><span class="p">)</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">recordingInProgress</span><span class="p">.</span><span class="na">get</span><span class="p">())</span> <span class="p">{</span>
+            <span class="kd">val</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">recorder</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">BUFFER_SIZE</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;Reading of audio buffer failed: &quot;</span> <span class="o">+</span>
+                        <span class="n">getBufferReadFailureReason</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+            <span class="p">}</span>
+            <span class="n">mVoice</span><span class="p">.</span><span class="na">voiceUploadMediaUpload</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">mVoice</span><span class="p">.</span><span class="na">voiceUploadMediaStop</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">fun</span> <span class="nf">getBufferReadFailureReason</span><span class="p">(</span><span class="n">errorCode</span><span class="p">:</span> <span class="kt">Int</span><span class="p">):</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">when</span> <span class="p">(</span><span class="n">errorCode</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">AudioRecord</span><span class="p">.</span><span class="na">ERROR_INVALID_OPERATION</span> <span class="o">-&gt;</span> <span class="s">&quot;ERROR_INVALID_OPERATION&quot;</span>
+            <span class="n">AudioRecord</span><span class="p">.</span><span class="na">ERROR_BAD_VALUE</span> <span class="o">-&gt;</span> <span class="s">&quot;ERROR_BAD_VALUE&quot;</span>
+            <span class="n">AudioRecord</span><span class="p">.</span><span class="na">ERROR_DEAD_OBJECT</span> <span class="o">-&gt;</span> <span class="s">&quot;ERROR_DEAD_OBJECT&quot;</span>
+            <span class="n">AudioRecord</span><span class="p">.</span><span class="na">ERROR</span> <span class="o">-&gt;</span> <span class="s">&quot;ERROR&quot;</span>
+            <span class="k">else</span> <span class="o">-&gt;</span> <span class="s">&quot;Unknown (</span><span class="si">$</span><span class="n">errorCode</span><span class="s">)&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">private</span> <span class="kd">fun</span> <span class="nf">startRecording</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">recorder</span> <span class="o">=</span> <span class="n">AudioRecord</span><span class="p">(</span><span class="n">MediaRecorder</span><span class="p">.</span><span class="na">AudioSource</span><span class="p">.</span><span class="na">VOICE_RECOGNITION</span><span class="p">,</span> <span class="n">SAMPLING_RATE_IN_HZ</span><span class="p">,</span>
+            <span class="n">CHANNEL_CONFIG</span><span class="p">,</span> <span class="n">AUDIO_FORMAT</span><span class="p">,</span> <span class="n">BUFFER_SIZE</span><span class="p">)</span>
+    <span class="n">mVoice</span><span class="p">.</span><span class="na">voiceUploadMediaStart</span><span class="p">()</span>
+    <span class="n">recorder</span><span class="o">!!</span><span class="p">.</span><span class="na">startRecording</span><span class="p">()</span>
+    <span class="n">recordingInProgress</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+    <span class="n">recordingThread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">RecordingRunnable</span><span class="p">(),</span> <span class="s">&quot;Recording Thread&quot;</span><span class="p">)</span>
+    <span class="n">recordingThread</span><span class="o">!!</span><span class="p">.</span><span class="na">start</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">private</span> <span class="kd">fun</span> <span class="nf">stopRecording</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">recorder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="n">recordingInProgress</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+    <span class="n">recorder</span><span class="o">!!</span><span class="p">.</span><span class="na">stop</span><span class="p">()</span>
+    <span class="n">recorder</span><span class="o">!!</span><span class="p">.</span><span class="na">release</span><span class="p">()</span>
+    <span class="n">recorder</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="n">recordingThread</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h2 id="语音数据处理协议">语音数据处理协议<a class="headerlink" href="#语音数据处理协议" title="Permanent link"></a></h2>
+<h3 id="音量设置">音量设置<a class="headerlink" href="#音量设置" title="Permanent link"></a></h3>
+<p>App 需要根据下发的值去设置系统的音量。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span> <span class="nf">onSetVolume</span><span class="p">(</span><span class="kt">int</span> <span class="n">vol</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vol</td>
+<td>音量值，取值 0 ~ 100</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回值</strong></p>
+<p>将设置的结果返回。</p>
+<details class="example"><summary>示例代码</summary><div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onSetVolume</span><span class="p">(</span><span class="kt">int</span> <span class="n">vol</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;onSetVolume:&quot;</span> <span class="o">+</span> <span class="n">vol</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">mAudioManager</span><span class="p">.</span><span class="na">getStreamMaxVolume</span><span class="p">(</span><span class="n">AudioManager</span><span class="p">.</span><span class="na">STREAM_MUSIC</span><span class="p">);</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">mAudioManager</span><span class="p">.</span><span class="na">setStreamVolume</span><span class="p">(</span><span class="n">AudioManager</span><span class="p">.</span><span class="na">STREAM_MUSIC</span><span class="p">,</span> <span class="p">(</span><span class="n">vol</span> <span class="o">*</span> <span class="n">max</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="n">AudioManager</span><span class="p">.</span><span class="na">FLAG_SHOW_UI</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">SecurityException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Kotlin</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onSetVolume</span><span class="p">(</span><span class="n">vol</span><span class="p">:</span> <span class="kt">Int</span><span class="p">):</span> <span class="kt">Boolean</span> <span class="p">{</span>
+    <span class="n">Log</span><span class="p">.</span><span class="na">i</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;onSetVolume:</span><span class="si">$</span><span class="n">vol</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="nv">max</span> <span class="o">=</span> <span class="n">mAudioManager</span><span class="o">!!</span><span class="p">.</span><span class="na">getStreamMaxVolume</span><span class="p">(</span><span class="n">AudioManager</span><span class="p">.</span><span class="na">STREAM_MUSIC</span><span class="p">)</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">mAudioManager</span><span class="o">!!</span><span class="p">.</span><span class="na">setStreamVolume</span><span class="p">(</span><span class="n">AudioManager</span><span class="p">.</span><span class="na">STREAM_MUSIC</span><span class="p">,</span> <span class="n">vol</span> <span class="o">*</span> <span class="n">max</span> <span class="o">/</span> <span class="m">100</span><span class="p">,</span> <span class="n">AudioManager</span><span class="p">.</span><span class="na">FLAG_SHOW_UI</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">SecurityException</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h3 id="媒体控制">媒体控制<a class="headerlink" href="#媒体控制" title="Permanent link"></a></h3>
+<p>网关下发的媒体控制指令，App 需要根据下发的指令执行对于的操作。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span> <span class="nf">onControlCommand</span><span class="p">(</span><span class="nd">@ControlCommandType</span> <span class="kt">int</span> <span class="n">ctl</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctl</td>
+<td>媒体控制指令，值为 CTRL_CMD_XXX 之一：<br/>CTRL_CMD_MIC_OPEN<br/>CTRL_CMD_MIC_CLOSE<br/>CTRL_CMD_PLAY<br/>CTRL_CMD_PAUSE<br/>CTRL_CMD_BT_PLAY_OPEN<br/>CTRL_CMD_BT_PLAY_CLOSE<br/>CTRL_CMD_PLAY_NEXT<br/>CTRL_CMD_PLAY_PREV</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回值</strong></p>
+<p>将设置的结果返回。</p>
+<h3 id="音频播放进度同步">音频播放进度同步<a class="headerlink" href="#音频播放进度同步" title="Permanent link"></a></h3>
+<p>云端下发同步音频播放进度的通知。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onSyncAudio</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="tts-文本同步">TTS 文本同步<a class="headerlink" href="#tts-文本同步" title="Permanent link"></a></h3>
+<p>语音对话的文本同步回调，APP 或设备端接收该消息后可以实时在界面上展示。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onSyncDialogText</span><span class="p">(</span><span class="n">String</span> <span class="n">speaker</span><span class="p">,</span> <span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">text</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>speaker</td>
+<td>说话对象， 值为 "human" 或 "robot"</td>
+</tr>
+<tr>
+<td>id</td>
+<td>该记录的id号</td>
+</tr>
+<tr>
+<td>text</td>
+<td>语音对应的文本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="本地闹钟">本地闹钟<a class="headerlink" href="#本地闹钟" title="Permanent link"></a></h3>
+<p>本地闹钟触发回调</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onAlarmClock</span><span class="p">(</span><span class="n">String</span> <span class="n">alarm</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alarm</td>
+<td>本地闹钟触发的事件，JSON格式的字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="任务提醒">任务提醒<a class="headerlink" href="#任务提醒" title="Permanent link"></a></h3>
+<p>云端下发的任务提醒通知。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onTaskAlert</span><span class="p">(</span><span class="nd">@TaskAlertType</span> <span class="kt">int</span> <span class="n">type</span><span class="p">,</span> <span class="n">String</span> <span class="n">msg</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>任务类型，值为 TASK_TYPE_XXX 之一：<br/>TASK_TYPE_NORMAL<br/>TASK_TYPE_CLOCK<br/>TASK_TYPE_ALERT<br/>TASK_TYPE_RING_TONE<br/>TASK_TYPE_CALL<br/>TASK_TYPE_CALL_TTS<br/>TASK_TYPE_INVALD</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>下发的提醒事件，JSON格式的字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="昵称设置">昵称设置<a class="headerlink" href="#昵称设置" title="Permanent link"></a></h3>
+<p>App 需根据状态调用前端语音接口设置或删除昵称。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span> <span class="nf">onSetNickName</span><span class="p">(</span><span class="nd">@SetNickNameType</span> <span class="kt">int</span> <span class="n">mode</span><span class="p">,</span> <span class="n">String</span> <span class="n">nickname</span><span class="p">,</span> <span class="n">String</span> <span class="n">pinyin</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>昵称设状态，值为 NICKNAME_XXX 之一：<br/>NICKNAME_SET<br/>NICNAME_DEL<br/>NICKNAME_INVALD</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>昵称中文名</td>
+</tr>
+<tr>
+<td>pinyin</td>
+<td>昵称拼音</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回值</strong></p>
+<p>将设置的结果返回。</p>
+<h3 id="子设备语音配网">子设备语音配网<a class="headerlink" href="#子设备语音配网" title="Permanent link"></a></h3>
+<p>云端识别到配网意图后，触发开启/关闭子设备配网请求回调。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onThingConfig</span><span class="p">(</span><span class="nd">@ThingConfigType</span> <span class="kt">int</span> <span class="n">mode</span><span class="p">,</span> <span class="n">String</span> <span class="n">token</span><span class="p">,</span> <span class="kt">int</span> <span class="n">timeout</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>配网状态，值为 THING_CONFIG_XXX 之一：<br/>THING_CONFIG_START<br/>THING_CONFIG_STOP<br/>THING_CONFIG_INVALD</td>
+</tr>
+<tr>
+<td>token</td>
+<td>给wifi设备配网时需要token</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>配网超时时间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="语音上传状态">语音上传状态<a class="headerlink" href="#语音上传状态" title="Permanent link"></a></h3>
+<p>语音上传云端，出现异常将触发该回调。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onUploadMediaStatus</span><span class="p">(</span><span class="nd">@UploadMediaStatusType</span> <span class="kt">int</span> <span class="n">status</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>语音上传状态， 值为 UPLOAD_XXX 之一:<br/>UPLOAD_NONE<br/>UPLOAD_NETWORK_ERR</td>
+</tr>
+</tbody>
+</table>
+<h3 id="云端媒体数据下发">云端媒体数据下发<a class="headerlink" href="#云端媒体数据下发" title="Permanent link"></a></h3>
+<p>收到云端媒体数据时触发该回调。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onCloudMedia</span><span class="p">(</span><span class="n">MediaAttribute</span><span class="o">[]</span> <span class="n">mediaAttributes</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>MediaAttribute</strong></p>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mDecodeType</td>
+<td>音频编码类型，值为 DECODER_TYPE_XXX 之一:<br/>DECODER_TYPE_WAV<br/>DECODER_TYPE_MP3<br/>DECODER_TYPE_SPEEX<br/>DECODER_TYPE_AAC<br>DECODER_TYPE_AMR<br/>DECODER_TYPE_M4A<br/>DECODER_TYPE_PCM<br/>DECODER_TYPE_INVALD</td>
+</tr>
+<tr>
+<td>mLength</td>
+<td>数据大小长度</td>
+</tr>
+<tr>
+<td>mDuration</td>
+<td>音频的时长</td>
+</tr>
+<tr>
+<td>mMediaType</td>
+<td>媒体类型，值为 MEDIA_TYPE_XXX 之一:<br/>MEDIA_TYPE_MEDIA<br/>MEDIA_TYPE_TTS<br/>MEDIA_TYPE_INVALD</td>
+</tr>
+<tr>
+<td>mUrl</td>
+<td>音频文件的 URL</td>
+</tr>
+<tr>
+<td>mFollowAction</td>
+<td>是否继续对话，值为FOLLOW_ACTION_KEEP_SESSION或FOLLOW_ACTION_NO_KEEP_SESSION</td>
+</tr>
+<tr>
+<td>mSessionId</td>
+<td>对话的 ID</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>示例代码</summary><div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCloudMedia</span><span class="p">(</span><span class="n">MediaAttribute</span><span class="o">[]</span> <span class="n">mediaAttributes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">requestSpeakerMedia</span><span class="p">(</span><span class="n">mediaAttributes</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">requestSpeakerMedia</span><span class="p">(</span><span class="kd">final</span> <span class="n">MediaAttribute</span><span class="o">[]</span> <span class="n">mediaAttributes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">CountDownLatch</span> <span class="n">latch</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CountDownLatch</span><span class="p">(</span><span class="n">mediaAttributes</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="kt">boolean</span> <span class="n">isDialog</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">MediaAttribute</span> <span class="n">mediaAttribute</span> <span class="p">:</span> <span class="n">mediaAttributes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">TextUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">mediaAttribute</span><span class="p">.</span><span class="na">mUrl</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">getDefault</span><span class="p">(),</span>
+                    <span class="s">&quot;/sdcard/tuya_speech_files/%s_%d_speaker_tmp.mp3&quot;</span><span class="p">,</span>
+                    <span class="n">mediaAttribute</span><span class="p">.</span><span class="na">mMediaType</span> <span class="o">==</span> <span class="n">MediaAttribute</span><span class="p">.</span><span class="na">MEDIA_TYPE_TTS</span> <span class="o">?</span> <span class="s">&quot;tts&quot;</span> <span class="p">:</span> <span class="s">&quot;audio&quot;</span><span class="p">,</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">mediaAttribute</span><span class="p">.</span><span class="na">mMediaType</span> <span class="o">==</span> <span class="n">MediaAttribute</span><span class="p">.</span><span class="na">MEDIA_TYPE_TTS</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">mediaAttribute</span><span class="p">.</span><span class="na">mFollowAction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">isDialog</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">requestSpeakerMedia</span><span class="p">(</span><span class="n">mediaAttribute</span><span class="p">.</span><span class="na">mUrl</span><span class="p">,</span> <span class="n">mediaAttribute</span><span class="p">.</span><span class="na">mRequestBody</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">latch</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">latch</span><span class="p">.</span><span class="na">await</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">mSpeechHandler</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">mSpeechHandler</span><span class="p">.</span><span class="na">removeMessages</span><span class="p">(</span><span class="n">SpeechCallback</span><span class="p">.</span><span class="na">TIMEOUT_MSG_WHAT</span><span class="p">);</span>
+
+        <span class="c1">//过滤空文件</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="n">list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Message</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">Message</span><span class="p">.</span><span class="na">obtain</span><span class="p">();</span>
+            <span class="n">msg</span><span class="p">.</span><span class="na">obj</span> <span class="o">=</span> <span class="n">list</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">isDialog</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">msg</span><span class="p">.</span><span class="na">what</span> <span class="o">=</span> <span class="n">SpeechCallback</span><span class="p">.</span><span class="na">DIALOG_MSG_WHAT</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">msg</span><span class="p">.</span><span class="na">what</span> <span class="o">=</span> <span class="n">SpeechCallback</span><span class="p">.</span><span class="na">SUCCESS_MSG_WHAT</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">mSpeechHandler</span><span class="p">.</span><span class="na">sendMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">requestSpeakerMedia</span><span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">url</span><span class="p">,</span> <span class="n">String</span> <span class="n">requestStr</span><span class="p">,</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kd">final</span> <span class="n">CountDownLatch</span> <span class="n">latch</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">Request</span> <span class="n">request</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">TextUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">requestStr</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">get</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">MediaType</span> <span class="n">JSON</span> <span class="o">=</span> <span class="n">MediaType</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;application/json; charset=utf-8&quot;</span><span class="p">);</span>
+        <span class="n">RequestBody</span> <span class="n">requestBody</span> <span class="o">=</span> <span class="n">RequestBody</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">JSON</span><span class="p">,</span> <span class="n">requestStr</span><span class="p">);</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="n">requestBody</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">mHttpClient</span><span class="p">.</span><span class="na">newCall</span><span class="p">(</span><span class="n">request</span><span class="p">).</span><span class="na">enqueue</span><span class="p">(</span><span class="k">new</span> <span class="n">Callback</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailure</span><span class="p">(</span><span class="n">Call</span> <span class="n">call</span><span class="p">,</span> <span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">latch</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
+            <span class="n">Log</span><span class="p">.</span><span class="na">w</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;requestSpeakerMedia onFailure&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResponse</span><span class="p">(</span><span class="n">Call</span> <span class="n">call</span><span class="p">,</span> <span class="n">Response</span> <span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Log</span><span class="p">.</span><span class="na">w</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;requestSpeakerMedia onResponse&quot;</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">body</span><span class="p">()</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">latch</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">InputStream</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="na">body</span><span class="p">().</span><span class="na">byteStream</span><span class="p">();</span>
+            <span class="n">FileOutputStream</span> <span class="n">fileOutputStream</span><span class="p">;</span>
+
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="n">file</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+                <span class="p">}</span>
+
+                <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+                <span class="kt">byte</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="k">while</span> <span class="p">((</span><span class="n">length</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">fileOutputStream</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="n">fileOutputStream</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">file</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+                    <span class="n">Log</span><span class="p">.</span><span class="na">w</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; empty&quot;</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">Log</span><span class="p">.</span><span class="na">w</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; saved&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+                <span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+            <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+                <span class="n">latch</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Kotlin</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</div>
+</div>
+</details>
+<h3 id="oem-定制数据透传">OEM 定制数据透传<a class="headerlink" href="#oem-定制数据透传" title="Permanent link"></a></h3>
+<p>透传OEM定制的 MQTT 501 接口，具体协议内容由云端与OEM客户制定，并提供说明。</p>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">onCloudCustom</span><span class="p">(</span><span class="n">String</span> <span class="n">type</span><span class="p">,</span> <span class="n">String</span> <span class="n">msg</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>接口类型</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>Json格式消息</td>
+</tr>
+</tbody>
+</table>
+<h2 id="音乐音频控制">音乐/音频控制<a class="headerlink" href="#音乐音频控制" title="Permanent link"></a></h2>
+<h3 id="音频切换">音频切换<a class="headerlink" href="#音频切换" title="Permanent link"></a></h3>
+<h4 id="播放上一首">播放上一首<a class="headerlink" href="#播放上一首" title="Permanent link"></a></h4>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">playPrev</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="播放下一首">播放下一首<a class="headerlink" href="#播放下一首" title="Permanent link"></a></h4>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">playNext</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="获取播放模式">获取播放模式<a class="headerlink" href="#获取播放模式" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">getPlayerMode</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>返回值说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>返回值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int(PlayerMode)</td>
+<td>云端播放器播放模式，值为MODE_XXX之一：<br/>MODE_NORMAL:顺序播放<br/>MODE_SHUFFLE:随机播放<br/>MODE_REPEAT_ONE:单曲循环播放<br/>MODE_REPEAT_ALL:列表循环播放</td>
+</tr>
+</tbody>
+</table>
+<h3 id="设置播放模式">设置播放模式<a class="headerlink" href="#设置播放模式" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">boolean</span> <span class="nf">setPlayerMode</span><span class="p">(</span><span class="nd">@PlayerMode</span> <span class="kt">int</span> <span class="n">mode</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="获取当前播放的歌曲信息">获取当前播放的歌曲信息<a class="headerlink" href="#获取当前播放的歌曲信息" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">AudioBean</span> <span class="nf">getCurrentAudio</span><span class="p">()</span><span class="err">；</span>
+</code></pre></div>
+<h3 id="获取当前的播放列表">获取当前的播放列表<a class="headerlink" href="#获取当前的播放列表" title="Permanent link"></a></h3>
+<p><strong>接口说明</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">AudioBean</span><span class="o">&gt;</span> <span class="nf">getPlayList</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>返回值说明</strong>
+返回 <a href="#AudioBean">AudioBean</a></p>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>列表起始下标</td>
+</tr>
+<tr>
+<td>end</td>
+<td>列表结束下标</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回值说明</strong></p>
+<p>返回 <a href="#AudioBean">AudioBean</a> 的列表</p>
+<h3 id="audiobean">AudioBean<a class="headerlink" href="#audiobean" title="Permanent link"></a></h3>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>indexId</td>
+<td>在播放列表中的下标</td>
+</tr>
+<tr>
+<td>audioId</td>
+<td>音频 ID</td>
+</tr>
+<tr>
+<td>albumId</td>
+<td>专辑 ID</td>
+</tr>
+<tr>
+<td>albumName</td>
+<td>专辑名字</td>
+</tr>
+<tr>
+<td>audioName</td>
+<td>音频名字</td>
+</tr>
+<tr>
+<td>artist</td>
+<td>艺术家</td>
+</tr>
+<tr>
+<td>imgUrl</td>
+<td>封面图片的 URL</td>
+</tr>
+<tr>
+<td>source</td>
+<td>音频提供商 ID</td>
+</tr>
+<tr>
+<td>audioUrl</td>
+<td>音频文件的 URL</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>音频的时长</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../upgrade/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              OTA 升级
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../voice_assistant/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              语音助手
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Tuya Inc.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": {"default": "stable", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>
