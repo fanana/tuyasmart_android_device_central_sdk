@@ -351,7 +351,7 @@ tuyaGatewayStart 是异步调用，其结果通过回调函数返回，启动成
 **接口说明**
 
 ```java
-public int gatewayBindToken(String token);
+public int tuyaIotBindToken(String token);
 ```
 
 **参数说明**
@@ -366,6 +366,30 @@ public int gatewayBindToken(String token);
 | ------- | ------------------------------------------------------------ |
 | 0       | 调用成功，请注意，调用成功不代表已经入网成功，入网结果通过 onNetworkStatus 通知。 |
 | 非 0 值 | 调用失败，没有入网。                                         |
+
+??? example "示例代码"
+    
+    === "Java"
+
+        ```java
+        TuyaHomeSdk.getActivatorInstance().getActivatorToken(homeId, new ITuyaActivatorGetToken() {
+            @Override
+            public void onSuccess(final String token) {
+                threadPoolExecutor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.e(TAG, "get token suc , iot bind token");
+                        TuyaGatewaySdk.getInstance().tuyaIotBindToken(token);
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(String errorCode, String errorMsg) {
+                Log.e(TAG, "get token failed " + errorCode + ", " + errorMsg);
+            }
+        });
+        ```
 
 ## DP 点上报
 
@@ -411,6 +435,37 @@ public int tuyaIotReportDataPointRawSync(String devId, int dataPointId, byte[] d
 | dataPointId | 在涂鸦 IoT 平台上定义的功能点编号                            |
 | data        | 透传型 dp 点数据                                             |
 | timeout     | 函数阻塞超时时间，以秒为单位                                 |
+
+## ATOP透传接口
+**接口说明** 
+
+```java
+ATopResponse tuyaIotAtopPost(String api, String version, String postData);
+```
+
+**参数说明**
+
+| 参数 |说明  |
+| --- | --- |
+| api | 接口名|
+| version | 接口版本|
+| postData | 上报云端的数据json字符串|
+
+| 返回值    | 含义                                                         |
+| --------- | ------------------------------------------------------------ |
+| ATopResponse      | 包含errCode（错误码）和result（请求结果）两个字段。请求正常返回时errCode为0 |
+
+??? example "示例代码"
+
+    === "Java"
+
+        ```java
+        ATopResponse response = mGateway.tuyaIotAtopPost("tuya.xx.xx", "1.0", "");
+        if (response.errCode == 0) {
+            Log.d(TAG, "result: " + response.result);
+        }
+        ```
+
 
 ## 获取虚拟 ID
 

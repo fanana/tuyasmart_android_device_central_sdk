@@ -91,7 +91,7 @@ init(ISpeechHelper callback)
                     }
 
                     @Override
-                    public void onCloudExtMsg(String type, String msg) {
+                    public void onCloudCustom(String type, String msg) {
 
                     }
                 });
@@ -120,7 +120,7 @@ init(ISpeechHelper callback)
             override fun onThingConfig(mode: Int, token: String, timeout: Int) {}
             override fun onUploadMediaStatus(status: Int) {}
             override fun onCloudMedia(mediaAttributes: Array<MediaAttribute>) {}
-            override fun onCloudExtMsg(type: String, msg: String) {}
+            override fun onCloudCustom(type: String, msg: String) {}
         })
         ```
 
@@ -642,7 +642,7 @@ void onCloudMedia(MediaAttribute[] mediaAttributes);
 **接口说明**
 
 ```java
-void onCloudExtMsg(String type, String msg);
+void onCloudCustom(String type, String msg);
 ```
 
 **参数说明**

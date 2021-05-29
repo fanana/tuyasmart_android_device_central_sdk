@@ -14,10 +14,11 @@ nav:
     - Zigbee网关:
       - 模块产测: zigbee_test.md
     - OTA 升级: upgrade.md
-  - 语音SDK:
+  - 语音 SDK:
     - 语音控制: voice_sdk.md
     - 语音助手: voice_assistant.md
   - 日志系统: logutils.md
+  - 名词解释: glossary.md
   - 常见问题: FAQ.md
   - 更新日志: changelog.md
 

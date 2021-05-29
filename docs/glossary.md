@@ -1,0 +1,1 @@
+涂鸦 AI+IoT 平台时常见的术语名词可以在开发者平台上进行详细的了解：[名词解释](https://developer.tuya.com/cn/docs/iot/terms?id=K914joq6tegj4)
